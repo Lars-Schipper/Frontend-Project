@@ -178,7 +178,7 @@ const Home = () => {
           </div>
 
           <div className="w-full flex justify-center md:justify-start md:px-10 px-2">
-            <img src="/images/Stockermarket.png" className="max-h-100 rounded-3xl object-cover"></img>
+            <img src="/images/stockmarket.png" className="max-h-100 rounded-3xl object-cover"></img>
           </div>
         </div>
       </div>

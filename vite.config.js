@@ -13,5 +13,5 @@ export default defineConfig({
     }), 
     tailwindcss(),
   ],
-  base: process.env.VITE_BASE_PATH || "/Frontend-Project"
+  base: process.env.VITE_BASE_PATH || "/"
 })
