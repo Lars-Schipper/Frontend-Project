@@ -1,19 +1,18 @@
-# Frontend-Project
-Dit is Mijn frontend project.
-Voor dit project ben ik helemaal vrij gelaten in wat voor een applicatie ik wil ontwikkelen.
-voor mijn backend eind project heb ik een broker applicatie gemaakt met php, javascript en bootstrap.
-het leek mij dus leuk om deze applicatie opnieuw te gaan maken maar dan in react, tailwind en javascript.
-maar dan met alle extra kennis die ik in de tussen tijd heb opgedaan.
-denk hier bij aan het reactief maken van de ui. dit zorgt er voor dat je de applicatie op je computer, tablet en telefoon zou kunnen gebruiken.
+# React + Vite
 
-deze applicatie is nog in ontwikkeling en dus nog niet af.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
+Currently, two official plugins are available:
 
-mocht je deze applicatie willen runnen zou je de reposetory kunnen clonen en de aplicatie kunnen opstarten met: npm run dev
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-voor het runnen van deze applicatie heb je het volgende nodig: 
+## React Compiler
 
-- node.js
-- vite
-- npm
-- vs-code(of een andere compiler)
+The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+
+Note: This will impact Vite dev & build performances.
+
+## Expanding the ESLint configuration
+
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
