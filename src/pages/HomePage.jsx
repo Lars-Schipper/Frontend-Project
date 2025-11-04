@@ -1,5 +1,4 @@
 import { Link } from "react-router";
-import Stockmarket from "../public/images/Stockmarket.png"
 import meeting from "../public/images/meeting.jpeg";
 import marketApp from "../public/images/marketapp.jpeg";
 
@@ -181,7 +180,7 @@ const Home = () => {
           </div>
 
           <div className="w-full flex justify-center md:justify-start md:px-10 px-2">
-            <img src={Stockmarket} className="max-h-100 rounded-3xl object-cover"></img>
+            <img src="/images/Stockermarket.png" className="max-h-100 rounded-3xl object-cover"></img>
           </div>
         </div>
       </div>
