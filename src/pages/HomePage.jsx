@@ -1,6 +1,4 @@
 import { Link } from "react-router";
-import meeting from "../public/images/meeting.jpeg";
-import marketApp from "../public/images/marketapp.jpeg";
 
 import { BsArrowUpRight, BsShield, BsLightningCharge } from "react-icons/bs";
 import { MdOutlineAnalytics } from "react-icons/md";
@@ -235,7 +233,7 @@ const Home = () => {
         </div>
 
         <div className="md:rounded-e-2xl rounded-b-2xl md:rounded-none">
-          <img className="md:rounded-e-2xl rounded-b-2xl md:rounded-none h-full object-cover" src={meeting} alt="" />
+          <img className="md:rounded-e-2xl rounded-b-2xl md:rounded-none h-full object-cover" src="/images/meeting.jpeg" alt="" />
         </div>
       </div>
 
@@ -276,7 +274,7 @@ const Home = () => {
             </div>
 
             <div className="w-full flex justify-center md:justify-start md:px-10 px-2">
-              <img src={marketApp} className="max-h-100 rounded-3xl object-cover"></img>
+              <img src="/images/marketapp.jpeg" className="max-h-100 rounded-3xl object-cover"></img>
             </div>
           </div>
         </div>
