@@ -82,14 +82,14 @@ const Layout = () => {
                         </div>
                     </div>
 
-                    <div className={`${showBurger ? '' : 'hidden'} md:hidden text-center px-5 space-y-3 py-3 z-50 dark:text-white bg-zinc-100/30 dark:bg-zinc-800/30 backdrop-blur-xl border-b-1 border-zinc-200 dark:border-zinc-500`}>
+                    <div className={`${showBurger ? '' : 'hidden'} md:hidden text-center px-5 space-y-3 py-3 z-50 dark:text-white bg-zinc-100/30 dark:bg-zinc-800/30 backdrop-blur-xl border-b border-zinc-200 dark:border-zinc-500`}>
                         <div className="hover:text-zinc-500 dark:hover:text-zinc-400">
                             <Link>Home</Link>
                         </div>
                         <div className="hover:text-zinc-500 dark:hover:text-zinc-400">
                             <Link to={"/investment"}>Investments</Link>
                         </div>
-                        <div className="pb-3 border-b-1 border-zinc-200 dark:border-zinc-500 hover:text-zinc-500 dark:hover:text-zinc-400">
+                        <div className="pb-3 border-b border-zinc-200 dark:border-zinc-500 hover:text-zinc-500 dark:hover:text-zinc-400">
                             <Link>Research</Link>
                         </div>
 
