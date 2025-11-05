@@ -1,4 +1,3 @@
-import { FaArrowTrendUp, FaArrowTrendDown } from "react-icons/fa6";
 import ShowStock from "../components/ResearchPage/ShowstockComponent";
 import Niews from "../components/ResearchPage/NieuwsComponent";
 import Movers from "../components/ResearchPage/MoverComponent";

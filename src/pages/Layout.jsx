@@ -7,6 +7,8 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { CiMail } from "react-icons/ci";
 import { FiFacebook, FiTwitter, FiLinkedin, FiInstagram } from "react-icons/fi";
 
+import {Helmet} from "react-helmet";
+
 const footerlink = (text) => {
     return (
         <>
@@ -33,9 +35,12 @@ const Layout = () => {
 
     return (
         <>
+            <Helmet>
+                <meta name="theme-color" content={`${theme ? 'oklch(27.4% 0.006 286.033)': 'oklch(96.7% 0.001 286.375)'}`}></meta>
+            </Helmet>
             <div className={`${theme ? 'dark' : ''} min-h-screen`} >
                 <nav className="fixed w-full">
-                    <div className="p-2 pb-3 flex justify-between dark:text-white bg-zinc-200/30 dark:bg-zinc-900/30 backdrop-blur-xl border-b-1 border-zinc-200 dark:border-zinc-500">
+                    <div className="p-2 pb-3 flex justify-between dark:text-white bg-zinc-200/30 dark:bg-zinc-900/30 backdrop-blur-xl border-b border-zinc-200 dark:border-zinc-500">
                         <div>
                             <p className="font-extrabold text-3xl mt-1">InvestPro</p>
                         </div>
