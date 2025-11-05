@@ -4,65 +4,11 @@ import { BsArrowUpRight, BsShield, BsLightningCharge } from "react-icons/bs";
 import { MdOutlineAnalytics } from "react-icons/md";
 import { GoPeople } from "react-icons/go";
 import { AiOutlineGlobal } from "react-icons/ai";
-import { FaStar } from "react-icons/fa6";
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 
-const assets = (id, title, description) => {
-  return (<>
-    <div key={id} id={id} className="mt-5 basis-1/3">
-      <h3 className="text-xl font-semibold">
-        {title}
-      </h3>
-      <p className="text-zinc-500 dark:text-zinc-400 text-xs">
-        {description}
-      </p>
-    </div>
-  </>)
-}
-
-const box = (id, logo, title, description) => {
-  return (<>
-    <div key={id} className="border bg-zinc-200 dark:bg-zinc-900 dark:border-zinc-800 rounded-2xl text-start p-3 mx-5 m-5 md:mx-2 my-3 self-center h-50">
-      <div className="my-3 text-zinc-900 dark:text-zinc-100 text-2xl">{logo}</div>
-      <div className="mb-3 text-xl font-extralight">{title}</div>
-      <div className="text-sm text-zinc-500 dark:text-zinc-400">{description}</div>
-    </div>
-  </>)
-}
-
-const review = (id, rating, description, reviewer, role) => {
-  let ratings = [];
-  for (let i = 0; i < rating; i++) {
-    ratings.push(<FaStar />
-    )
-  }
-
-  const initials = `${reviewer.firstName[0] ?? ""}${reviewer.LastName[0] ?? ''}`;
-
-  return (<>
-    <div id={id} className="border bg-zinc-100 dark:bg-zinc-800 dark:border-zinc-700 border-zinc-200 rounded-2xl text-start p-3 mx-5 md:mx-2 my-3 self-center h-50">
-
-      <div className="my-3 text-lg text-yellow-300 text-nowrap flex">
-        {ratings}
-      </div>
-
-      <div className="text-sm text-zinc-500 dark:text-zing-400">"{description}"</div>
-
-      <div className="mt-3">
-        <div className="flex items-center space-x-2">
-          <div className="size-10 rounded-full bg-gray-200 flex items-center justify-center font-semibold text-zinc-700 text-sm">
-            {initials}
-          </div>
-          <div>
-            <div className="font-semibold dark:text-white text-zinc-900">{reviewer.firstName} {reviewer.LastName}</div>
-            <div className="text-xs text-zinc-400 dark:text-zinc-500">{role}</div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </>)
-}
+import Assets from "../components/homepage/AssetsComponent";
+import Box from "../components/homepage/BoxComponent";
+import Review from "../components/homepage/RevieuwComponent";
 
 const Home = () => {
   const assetData = [
@@ -171,7 +117,7 @@ const Home = () => {
 
             <div className="flex">
               {assetData.map((i) => {
-                return assets(i.id, i.title, i.description);
+                return Assets(i.id, i.title, i.description);
               })}
             </div>
 
@@ -195,7 +141,7 @@ const Home = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-5">
           {boxdata.map((i) => {
-            return box(i.id, i.logo, i.title, i.description)
+            return Box(i.id, i.logo, i.title, i.description)
           })}
 
         </div>
@@ -213,7 +159,7 @@ const Home = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-5">
           {reviews.map((i) => {
-            return review(i.id, i.rating, i.description, i.reviewer, i.job);
+            return Review(i.id, i.rating, i.description, i.reviewer, i.job);
           })}
         </div>
       </div>
@@ -226,8 +172,8 @@ const Home = () => {
               Start your investment journey today and become part of our community of successful investors. Get access to professional-grade tools and personalized guidance
             </p>
             <div className="flex">
-              {assets(1, "4.9/5", "Average rating")}
-              {assets(2, "10,000+", "Reviews")}
+              {Assets(1, "4.9/5", "Average rating")}
+              {Assets(2, "10,000+", "Reviews")}
             </div>
           </div>
         </div>

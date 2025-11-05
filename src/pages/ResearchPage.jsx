@@ -1,125 +1,8 @@
 import { FaArrowTrendUp, FaArrowTrendDown } from "react-icons/fa6";
-
-const showStock = (Data) => {
-    const growth = Data.growth > 0;
-
-    return (
-        <>
-            <div className="border rounded-2xl p-3 border-zinc-300 dark:border-zinc-700 ">
-                <div className="flex justify-between">
-                    <div className="text-sm text-zinc-400 dark:text-zinc-500 mt-1">
-                        {Data.name}
-                    </div>
-                    <div className="">
-                        <div className={`${growth ? "text-green-500" : "text-red-500"} mt-1.5 flex text-sm`}>
-                            <div className="me-2 mt-1">
-                                {growth ? <FaArrowTrendUp /> : <FaArrowTrendDown />}
-                            </div>
-                            <div>
-                                {`${growth ? "+" : ""}` + Data.growth + `%`}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="flex justify-between">
-                    <div className="text-2xl font-semibold">
-                        {`$ ${Data.price}`}
-                    </div>
-                    <div className="text-sm text-zinc-400 dark:text-zinc-500">
-                        {`${(Data.pricedifference > 0) ? "+" : ""}${Data.pricedifference}`}
-                    </div>
-                </div>
-            </div>
-        </>
-    )
-}
-
-const niews = (article) => {
-    const type = article.type;
-
-    return (
-        <>
-            <div className="py-3">
-
-                <div className="flex justify-between text-xs">
-                    <div className='border rounded-2xl px-3 p-0.5'>
-                        {article.type}
-                    </div>
-                    <div className="text-zinc-500 dark:text-zinc-400 text-xs">
-                        {article.time}
-                    </div>
-                </div>
-
-                <div className="mt-3">
-                    <div className="text-xl">
-                        {article.title}
-                    </div>
-                    <div className="text-zinc-400 dark:text-zinc-500 mt-2">
-                        {article.description}
-                    </div>
-                </div>
-
-                <div className="mt-2 text-zinc-400 dark:text-zinc-500 text-xs">
-                    {`Source: ${article.source}`}
-                </div>
-
-            </div>
-        </>
-    )
-}
-
-const movers = (stock) => {
-    const growth = stock.growth > 0;
-
-    return (
-        <>
-            <div>
-                <div className="flex justify-between">
-                    <div className="">{stock.ticker}</div>
-                    <div className="">{`$${stock.price}`}</div>
-                </div>
-
-                <div className="flex justify-between">
-                    <div className="text-zinc-500 dark:text-zinc-400 text-sm">{stock.name}</div>
-
-                    <div>
-                        <div className={`${growth ? "text-green-500" : "text-red-500"} mt-1.5 flex text-sm`}>
-                            <div className="me-2 mt-1">
-                                {growth ? <FaArrowTrendUp /> : <FaArrowTrendDown />}
-                            </div>
-                            <div>
-                                {`${growth ? "+" : ""}` + stock.growth + `%`}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </>
-    )
-}
-
-const performance = (stock) => {
-    const growth = stock.growth;
-    const color = stock.growth > 0;
-
-    return (
-        <>
-            <div className="flex justify-between">
-                <div>
-                    {stock.sector}
-                </div>
-                <div>
-                    <div className={`${color ? "text-green-500" : "text-red-500"} mt-1.5 flex text-sm`}>
-                        <div>
-                            {`${color ? "+" : ""}` + growth.toFixed(2) + `%`}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </>
-    )
-}
+import ShowStock from "../components/ResearchPage/ShowstockComponent";
+import Niews from "../components/ResearchPage/NieuwsComponent";
+import Movers from "../components/ResearchPage/MoverComponent";
+import Performance from "../components/ResearchPage/PerformanceComponent";
 
 const ResearchPage = () => {
     const stockdata = [
@@ -225,7 +108,7 @@ const ResearchPage = () => {
 
                     <div className="my-3 grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-4">
                         {stockdata.map((data) => {
-                            return (showStock(data))
+                            return (ShowStock(data))
                         })}
                     </div>
 
@@ -237,7 +120,7 @@ const ResearchPage = () => {
 
                         <div className="divide-y divide-zinc-300 dark:divide-zinc-700">
                             {news.map((article) => {
-                                return (niews(article));
+                                return (Niews(article));
                             })}
                         </div>
 
@@ -251,7 +134,7 @@ const ResearchPage = () => {
 
                         <div className="grid grid-cols-1 gap-3 mt-5 divide divide-y divide-zinc-300 dark:divide-zinc-700">
                             {marketMovers.map((stock) => {
-                                return (movers(stock));
+                                return (Movers(stock));
                             })}
                         </div>
                     </div>
@@ -261,7 +144,7 @@ const ResearchPage = () => {
 
                         <div className="grid grid-cols-1 gap-3 mt-5 divide divide-y divide-zinc-300 dark:divide-zinc-700">
                             {sector.map((stock) => {
-                                return (performance(stock));
+                                return (Performance(stock));
                             })}
                         </div>
                     </div>
