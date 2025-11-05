@@ -36,7 +36,7 @@ const Layout = () => {
     return (
         <>
             <Helmet>
-                <meta name="theme-color" content={`${theme ? 'oklch(27.4% 0.006 286.033)': 'oklch(96.7% 0.001 286.375)'}`}></meta>
+                <meta name="theme-color" content={`${theme ? '#27272a': '#f4f4f5'}`}></meta>
             </Helmet>
             <div className={`${theme ? 'dark' : ''} min-h-screen`} >
                 <nav className="fixed w-full">
@@ -114,7 +114,7 @@ const Layout = () => {
                     <Outlet></Outlet>
                 </div>
 
-                <footer className="border-t-1 border-zinc-400 dark:border-zinc-500" >
+                <footer className="border-t border-zinc-400 dark:border-zinc-500" >
                     <div className="p-2 py-10 pb-5 flex justify-between dark:text-white bg-zinc-100 dark:bg-zinc-800 z-100">
                         <div className="xl:mx-40 grid grid-cols-1 md:grid-cols-2">
                             <div>
