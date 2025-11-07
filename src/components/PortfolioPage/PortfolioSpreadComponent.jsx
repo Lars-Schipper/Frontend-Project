@@ -13,11 +13,11 @@ const Spread = (data, totalValue) => {
                         {data.sector}
                     </div>
 
-                    <div className="flex">
+                    <div className="flex text-sm">
                         <div className="me-2">
                             {data.percentage}%
                         </div>
-                        <div>
+                        <div className="text-zinc-500 dark:text-zinc-400">
                             {portion}
                         </div>
                     </div>

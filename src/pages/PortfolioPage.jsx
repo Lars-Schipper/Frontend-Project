@@ -1,6 +1,6 @@
-import { FaTable } from "react-icons/fa6";
 import Card from "../components/PortfolioPage/CardComponent";
 import Spread from "../components/PortfolioPage/PortfolioSpreadComponent";
+import Benchmark from "../components/PortfolioPage/PerformanceBenchmark";
 
 const PortfolioPage = () => {
     const cards = [
@@ -13,7 +13,7 @@ const PortfolioPage = () => {
         },
         {
             title: 'Total Gains/loss',
-            value: '237617.32',
+            value: '27617.32',
             info: "$",
             color: true,
             symbol: 'Arrow'
@@ -57,6 +57,41 @@ const PortfolioPage = () => {
         },
     ];
 
+    const performance = [
+        {
+            period: {
+                timespan: 'day',
+                amount: 1,
+            },
+            gain: -2.31,
+            SP: -1.85,
+        },
+        {
+            period: {
+                timespan: 'week',
+                amount: 1,
+            },
+            gain: 4.67,
+            SP: 3.12,
+        },
+        {
+            period: {
+                timespan: 'month',
+                amount: 1,
+            },
+            gain: 8.94,
+            SP: 6.45,
+        },
+        {
+            period: {
+                timespan: 'months',
+                amount: 3,
+            },
+            gain: 15.23,
+            SP: 12.67,
+        },
+    ]; 
+
     const totalValue = 125847.32;
 
     return (
@@ -83,17 +118,33 @@ const PortfolioPage = () => {
                             <div className="text-zinc-400 dark:text-zinc-500">
                                 Distribution of you investment by sector
                             </div>
+
                             <div className="mt-5">
                                 {portfolioSpread.map((data) => {
                                     return Spread(data, totalValue)
                                 })}
                             </div>
+
                         </div>
                         
                         <div className="lg:col-span-2 border rounded-2xl mt-5 p-4 border-zinc-300 dark:border-zinc-700">
+                            <div className="font-semibold">
+                                Performance vs Benchmark
+                            </div>
+                            <div className="text-zinc-400 dark:text-zinc-500">
+                                S&P 500 comparison
+                            </div>
+
+                            <div className="mt-5">
+                                {performance.map((data) => {
+                                    return Benchmark(data);
+                                })}
+                            </div>
 
                         </div>
                     </div>
+
+
 
                 </div>
             </div>
