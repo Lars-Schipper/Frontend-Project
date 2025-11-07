@@ -1,6 +1,7 @@
 import Card from "../components/PortfolioPage/CardComponent";
 import Spread from "../components/PortfolioPage/PortfolioSpreadComponent";
 import Benchmark from "../components/PortfolioPage/PerformanceBenchmark";
+import CurrentHoldings from "../components/PortfolioPage/currontHoldingsComponent";
 
 const PortfolioPage = () => {
     const cards = [
@@ -90,9 +91,47 @@ const PortfolioPage = () => {
             gain: 15.23,
             SP: 12.67,
         },
-    ]; 
+    ];
 
     const totalValue = 125847.32;
+
+    const currentHoldings = [
+        {
+            company: "Apple inc.",
+            ticker: "AAPL",
+            shares: 45,
+            costAvarage: 165.3,
+            currentPrice: 178.45,
+        },
+        {
+            company: "Microsoft Copr.",
+            ticker: "MSFT",
+            shares: 32,
+            costAvarage: 398.5,
+            currentPrice: 412.78
+        },
+        {
+            company: "Alphabet inc.",
+            ticker: "GOOGL",
+            shares: 18,
+            costAvarage: 132.45,
+            currentPrice: 142.56
+        },
+        {
+            company: "Tesla inc.",
+            ticker: "TSLA",
+            shares: 25,
+            costAvarage: 275.8,
+            currentPrice: 248.92
+        },
+        {
+            company: "NVIDIA Corp..",
+            ticker: "NVDA",
+            shares: 15,
+            costAvarage: 845.2,
+            currentPrice: 891.23
+        },
+    ];
 
     return (
         <>
@@ -126,7 +165,7 @@ const PortfolioPage = () => {
                             </div>
 
                         </div>
-                        
+
                         <div className="lg:col-span-2 border rounded-2xl mt-5 p-4 border-zinc-300 dark:border-zinc-700">
                             <div className="font-semibold">
                                 Performance vs Benchmark
@@ -144,7 +183,11 @@ const PortfolioPage = () => {
                         </div>
                     </div>
 
-
+                    <div className="border rounded-2xl mt-5 p-4 border-zinc-300 dark:border-zinc-700">
+                            {currentHoldings.map((data) => {
+                                return CurrentHoldings(data, currentHoldings);
+                            })}
+                    </div>
 
                 </div>
             </div>

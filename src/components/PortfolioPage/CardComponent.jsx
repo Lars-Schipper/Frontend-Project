@@ -37,7 +37,6 @@ const Card = (data) => {
         if (data.symbol == "dollar") {
             return <FaDollarSign />;
         } else if (data.symbol == "Arrow") {
-            console.log(data.value)
             if (parseCurrency(data.value) > 0) {
                 return <FaArrowTrendUp />;
             } else {
