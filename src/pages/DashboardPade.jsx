@@ -69,7 +69,7 @@ const DashboardPage = () => {
                 <div className="xl:mx-40 md:mx-15 mx-3">
 
                     <div>
-                        <h1 className="text-4xl font-semibold mb-2">Welcome Back, Lars! </h1>
+                        <h1 className="text-4xl font-semibold mb-2">Welcome Back! </h1>
                         <p className="text-zinc-400 dark:text-zinc-500 text-sm">Here is What is happening with your investments today</p>
                     </div>
 
