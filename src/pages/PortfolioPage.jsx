@@ -83,7 +83,7 @@ const PortfolioPage = () => {
                             <div className="text-zinc-400 dark:text-zinc-500">
                                 Distribution of you investment by sector
                             </div>
-                            <div className="mt-3">
+                            <div className="mt-5">
                                 {portfolioSpread.map((data) => {
                                     return Spread(data, totalValue)
                                 })}
