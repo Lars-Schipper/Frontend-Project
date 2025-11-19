@@ -158,8 +158,8 @@ const Home = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-5">
-          {reviews.map((i) => {
-            return Review(i.id, i.rating, i.description, i.reviewer, i.job);
+          {reviews.map((review, i) => {
+            return Review(review.id, review.rating, review.description, review.reviewer, review.job, i);
           })}
         </div>
       </div>

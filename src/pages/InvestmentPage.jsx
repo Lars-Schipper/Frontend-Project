@@ -85,8 +85,8 @@ const Investments = () => {
                             <div className="lg:ms-3">
 
                                 <form >
-                                    <select {...register("Filter")} id="Filter" className="w-full px-3 p-1 border border-zinc-300 dark:border-zinc-700 rounded-xl">
-                                        <option value="All categories" selected>All categories</option>
+                                    <select {...register("Filter")} defaultValue={"All categories"} id="Filter" className="w-full px-3 p-1 border border-zinc-300 dark:border-zinc-700 rounded-xl">
+                                        <option value="All categories">All categories</option>
                                         <option value="Stocks">Stocks</option>
                                         <option value="ETFs">ETFs</option>
                                         <option value="Crypto">Crypto</option>
@@ -103,9 +103,9 @@ const Investments = () => {
 
                     <div className="grid w-full gap-3 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 mt-5">
                         {
-                            bedrijfsData.map((data) => {
+                            bedrijfsData.map((data, i) => {
                                 return (
-                                    Stockcomponent(data)
+                                    Stockcomponent(data, i)
                                 )
                             })
                         }

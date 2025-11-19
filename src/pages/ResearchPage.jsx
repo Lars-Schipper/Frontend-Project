@@ -106,8 +106,8 @@ const ResearchPage = () => {
                     </div>
 
                     <div className="my-3 grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-4">
-                        {stockdata.map((data) => {
-                            return (ShowStock(data))
+                        {stockdata.map((data, i) => {
+                            return (ShowStock(data, i))
                         })}
                     </div>
 
@@ -118,8 +118,8 @@ const ResearchPage = () => {
                         </div>
 
                         <div className="divide-y divide-zinc-300 dark:divide-zinc-700">
-                            {news.map((article) => {
-                                return (Niews(article));
+                            {news.map((article, i) => {
+                                return (Niews(article, i));
                             })}
                         </div>
 
@@ -132,8 +132,8 @@ const ResearchPage = () => {
                         </div>
 
                         <div className="grid grid-cols-1 gap-3 mt-5 divide divide-y divide-zinc-300 dark:divide-zinc-700">
-                            {marketMovers.map((stock) => {
-                                return (Movers(stock));
+                            {marketMovers.map((stock, i) => {
+                                return (Movers(stock, i));
                             })}
                         </div>
                     </div>
@@ -142,8 +142,8 @@ const ResearchPage = () => {
                         <h1 className="text-xl">Sector Performance</h1>
 
                         <div className="grid grid-cols-1 gap-3 mt-5 divide divide-y divide-zinc-300 dark:divide-zinc-700">
-                            {sector.map((stock) => {
-                                return (Performance(stock));
+                            {sector.map((stock, i) => {
+                                return (Performance(stock, i));
                             })}
                         </div>
                     </div>

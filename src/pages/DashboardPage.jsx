@@ -146,8 +146,8 @@ const DashboardPage = () => {
                         <p className="text-zinc-400 dark:text-zinc-500 text-sm">Current positions in your portfolio</p>
 
                         <div className="mt-8">
-                            {holdings.map((stock) => {
-                                return (Holdingcard(stock))
+                            {holdings.map((stock, i) => {
+                                return (Holdingcard(stock, i))
                             })}
                         </div>
                     </div>

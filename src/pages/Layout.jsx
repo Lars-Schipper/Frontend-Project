@@ -7,7 +7,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { CiMail } from "react-icons/ci";
 import { FiFacebook, FiTwitter, FiLinkedin, FiInstagram } from "react-icons/fi";
 
-import {Helmet} from "react-helmet";
+import { Helmet } from "react-helmet";
 
 const footerlink = (text) => {
     return (
@@ -36,7 +36,7 @@ const Layout = () => {
     return (
         <>
             <Helmet>
-                <meta name="theme-color" content={`${theme ? '#27272a': '#f4f4f5'}`}></meta>
+                <meta name="theme-color" content={`${theme ? '#27272a' : '#f4f4f5'}`}></meta>
             </Helmet>
             <div className={`${theme ? 'dark' : ''} min-h-screen`} >
                 <nav className="fixed w-full">
@@ -93,9 +93,19 @@ const Layout = () => {
                             <Link>Research</Link>
                         </div>
 
+                        <div className="border-b border-zinc-200 dark:border-zinc-500 pb-3">
+                            <Link to={"/dashboard"}>
+                                <div className="hover:text-zinc-500 dark:hover:text-zinc-400">dashboard</div>
+                            </Link>
+                            <Link to={"/portfolio"}>
+                                <div className="hover:text-zinc-500 dark:hover:text-zinc-400">portfolio</div>
+                            </Link>
+                        </div>
+
                         <div>
                             <button className="mt-2 p-1 px-2 dark:text-zinc-200 rounded-2xl hover:text-zinc-400 dark:hover:text-zinc-400 text-nowrap" onClick={() => { themeswitcher() }}>{theme ? <IoSunnyOutline /> : <IoMoonOutline />}</button>
                         </div>
+
                         <div>
                             <Link to={"/login"}>
                                 <div className="hover:text-zinc-500 dark:hover:text-zinc-400" >Sign in</div>

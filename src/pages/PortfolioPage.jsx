@@ -144,8 +144,8 @@ const PortfolioPage = () => {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-                        {cards.map((data) => {
-                            return (Card(data))
+                        {cards.map((data, i) => {
+                            return (Card(data, i))
                         })}
                     </div>
 
@@ -159,8 +159,8 @@ const PortfolioPage = () => {
                             </div>
 
                             <div className="mt-5">
-                                {portfolioSpread.map((data) => {
-                                    return Spread(data, totalValue)
+                                {portfolioSpread.map((data, i) => {
+                                    return Spread(data, totalValue, i)
                                 })}
                             </div>
 
@@ -175,8 +175,8 @@ const PortfolioPage = () => {
                             </div>
 
                             <div className="mt-5">
-                                {performance.map((data) => {
-                                    return Benchmark(data);
+                                {performance.map((data, i) => {
+                                    return Benchmark(data, i);
                                 })}
                             </div>
 
@@ -184,8 +184,8 @@ const PortfolioPage = () => {
                     </div>
 
                     <div className="border rounded-2xl mt-5 p-4 border-zinc-300 dark:border-zinc-700">
-                            {currentHoldings.map((data) => {
-                                return CurrentHoldings(data, currentHoldings);
+                            {currentHoldings.map((data, i) => {
+                                return CurrentHoldings(data, currentHoldings, i);
                             })}
                     </div>
 
