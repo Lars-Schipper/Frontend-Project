@@ -1,5 +1,5 @@
 const Assets = (id, title, description) => {
-  return (<>
+  return (
     <div key={id} id={id} className="mt-5 basis-1/3">
       <h3 className="text-xl font-semibold">
         {title}
@@ -8,7 +8,7 @@ const Assets = (id, title, description) => {
         {description}
       </p>
     </div>
-  </>)
+  )
 }
 
 export default Assets;

@@ -1,4 +1,4 @@
-const Spread = (data, totalValue) => {
+const Spread = (data, totalValue, i) => {
 
     const portion = new Intl.NumberFormat('en-US', {
         style: 'currency',
@@ -6,7 +6,7 @@ const Spread = (data, totalValue) => {
     }).format(parseInt(totalValue / 100 * data.percentage)).slice(0, -3);
 
     return (
-        <>
+        <div key={i}>
             <div className="my-3">
                 <div className="flex justify-between">
                     <div>
@@ -32,7 +32,7 @@ const Spread = (data, totalValue) => {
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 

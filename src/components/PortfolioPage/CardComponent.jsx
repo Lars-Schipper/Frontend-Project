@@ -3,7 +3,7 @@ import { FaRegChartBar } from "react-icons/fa";
 
 
 
-const Card = (data) => {
+const Card = (data, i) => {
     const textcolor = (data) => {
         if (data.color) {
             if (parseCurrency(data.value) > 0) {
@@ -47,33 +47,31 @@ const Card = (data) => {
         }
     }
 
-    const parseCurrency = (str) =>  {
+    const parseCurrency = (str) => {
         const isNegative = str.includes('(') && str.includes(')');
         const num = Number(str.replace(/[^\d.-]/g, ""));
         return isNegative ? -num : num;
     }
 
     return (
-        <>
-            <div>
-                <div className="border rounded-2xl mt-5 p-4 border-zinc-300 dark:border-zinc-700">
-                    <div className="flex justify-between">
-                        <div>
-                            <div className="text-zinc-400 text-sm">
-                                {data.title}
-                            </div>
-                            <div className={`text-xl ${textcolor(data)}`}>
-                                {order(data)}
-                            </div>
+        <div key={i}>
+            <div className="border rounded-2xl mt-5 p-4 border-zinc-300 dark:border-zinc-700">
+                <div className="flex justify-between">
+                    <div>
+                        <div className="text-zinc-400 text-sm">
+                            {data.title}
                         </div>
+                        <div className={`text-xl ${textcolor(data)}`}>
+                            {order(data)}
+                        </div>
+                    </div>
 
-                        <div className={`${textcolor(data)} text-4xl font-semibold mt-3`}>
-                            {symbol(data)}
-                        </div>
+                    <div className={`${textcolor(data)} text-4xl font-semibold mt-3`}>
+                        {symbol(data)}
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 

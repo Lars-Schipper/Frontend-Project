@@ -8,7 +8,7 @@ import NotFoundPage from './pages/NotFoundPage.jsx'
 import Investments from './pages/InvestmentPage.jsx'
 import Layout from './pages/Layout.jsx'
 import ResearchPage from './pages/ResearchPage.jsx'
-import DashboardPage from './pages/DashboardPade.jsx'
+import DashboardPage from './pages/DashboardPage.jsx'
 import PortfolioPage from './pages/PortfolioPage.jsx'
 
 

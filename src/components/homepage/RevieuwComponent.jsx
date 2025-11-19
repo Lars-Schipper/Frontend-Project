@@ -1,7 +1,7 @@
 import { FaStar } from "react-icons/fa6";
 
 
-const Review = (id, rating, description, reviewer, role) => {
+const Review = (id, rating, description, reviewer, role, i) => {
   let ratings = [];
   for (let i = 0; i < rating; i++) {
     ratings.push(<FaStar />
@@ -10,8 +10,8 @@ const Review = (id, rating, description, reviewer, role) => {
 
   const initials = `${reviewer.firstName[0] ?? ""}${reviewer.LastName[0] ?? ''}`;
 
-  return (<>
-    <div id={id} className="border bg-zinc-100 dark:bg-zinc-800 dark:border-zinc-700 border-zinc-200 rounded-2xl text-start p-3 mx-5 md:mx-2 my-3 self-center h-50">
+  return (
+    <div key={i} id={id} className="border bg-zinc-100 dark:bg-zinc-800 dark:border-zinc-700 border-zinc-200 rounded-2xl text-start p-3 mx-5 md:mx-2 my-3 self-center h-50">
 
       <div className="my-3 text-lg text-yellow-300 text-nowrap flex">
         {ratings}
@@ -30,9 +30,8 @@ const Review = (id, rating, description, reviewer, role) => {
           </div>
         </div>
       </div>
-
     </div>
-  </>)
+  )
 }
 
 export default Review

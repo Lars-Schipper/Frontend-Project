@@ -1,8 +1,8 @@
 // company, ticker, shares, costAvarage, curretPrice - berekenen: Market value, Gain/Loss & Allocation
 
-const CurrentHoldings = (data, currentHoldings) => {
-    const {company, ticker, shares, costAvarage, currentPrice} = data;
-    
+const CurrentHoldings = (data, currentHoldings, i) => {
+    const { company, ticker, shares, costAvarage, currentPrice } = data;
+
     const cap = currentHoldings.map((data) => {
         // console.log(data.currentPrice, data.shares);
         return (data.shares * data.currentPrice);
@@ -22,14 +22,12 @@ const CurrentHoldings = (data, currentHoldings) => {
 
 
     return (
-        <>
-            <div>
-                ticker: {ticker}
-                gainloss: {gainLoss}
-                gainloss percentage:{gainLossPercentage}
-                allocation: {allocation}
-            </div>
-        </>
+        <div key={i}>
+            ticker: {ticker}
+            gainloss: {gainLoss}
+            gainloss percentage:{gainLossPercentage}
+            allocation: {allocation}
+        </div>
     )
 }
 

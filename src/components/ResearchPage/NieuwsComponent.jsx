@@ -1,7 +1,7 @@
-const Niews = (article) => {
+const Niews = (article, i) => {
 
     return (
-        <>
+        <div key={i}>
             <div className="py-3">
 
                 <div className="flex justify-between text-xs">
@@ -27,7 +27,7 @@ const Niews = (article) => {
                 </div>
 
             </div>
-        </>
+        </div>
     )
 }
 

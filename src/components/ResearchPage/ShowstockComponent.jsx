@@ -1,10 +1,10 @@
 import { FaArrowTrendUp, FaArrowTrendDown } from "react-icons/fa6";
 
-const ShowStock = (Data) => {
+const ShowStock = (Data, i) => {
     const growth = Data.growth > 0;
 
     return (
-        <>
+        <div key={i}>
             <div className="border rounded-2xl p-3 border-zinc-300 dark:border-zinc-700 ">
                 <div className="flex justify-between">
                     <div className="text-sm text-zinc-400 dark:text-zinc-500 mt-1">
@@ -30,7 +30,7 @@ const ShowStock = (Data) => {
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 
